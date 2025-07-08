@@ -54,7 +54,7 @@
 
       <div class="kontakt-formular">
         <h2>Napiš mi zprávu</h2>
-        <form id="formular" action="https://formspree.io/f/xkgblrgg" method="POST">
+        <form action="https://formsubmit.co/kana.dominik24@gmail.com" method="POST">
           <label for="jmeno">Jméno:</label>
           <input type="text" id="jmeno" name="jmeno" required />
 
@@ -63,6 +63,13 @@
 
           <label for="zprava">Zpráva:</label>
           <textarea id="zprava" name="zprava" rows="5" required></textarea>
+
+          <!-- Funkční přesměrování -->
+          <input type="hidden" name="_next" value="https://iskariod.github.io/digitalni-zoo/diky.html" />
+
+          <!-- Volitelné vylepšení -->
+          <input type="hidden" name="_subject" value="Nová zpráva z digitální zoo!">
+          <input type="hidden" name="_captcha" value="false">
 
           <button type="submit">Odeslat zprávu</button>
         </form>
@@ -73,15 +80,6 @@
   <footer>
     <p>&copy; 2025 DominikDev</p>
   </footer>
-
-  <!-- 🔁 Funkční přesměrování po odeslání -->
-  <script>
-    document.getElementById('formular').addEventListener('submit', function() {
-      setTimeout(function() {
-        window.location.href = "diky.html";
-      }, 1200); // 1.2 sekundy počkáme, než se odešle
-    });
-  </script>
 
 </body>
 </html>
