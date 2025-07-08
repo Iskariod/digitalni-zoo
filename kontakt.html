@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kontakt | Digitální zoo</title>
+
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <header>
+    <div class="header-content">
+      <h1>Moje digitální zoo</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Domů</a></li>
+          <li><a href="zvirata.html">Zvířata</a></li>
+          <li><a href="kontakt.html" class="active">Kontakt</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="profil-zvirete">
+  <h1>Dominik</h1>
+  <p class="prezdivka">„Ten, kdo dává pixelům příběh“</p>
+
+  <div class="kontakt-blok">
+    <div class="kontakt-text">
+      <div class="info">
+        <p class="motto">👨‍💻 <em>„Zvířata mluví. Já jim dávám stránku.“</em></p>
+        <ul>
+          <li><strong>Povaha:</strong> Kreativní, precizní, vtipný</li>
+          <li><strong>Bydliště:</strong> Mezi HTML tagy a CSS barvami</li>
+          <li><strong>Oblíbená činnost:</strong> Tvoření světa, kde má každý tvor svůj hlas</li>
+        </ul>
+        <div class="pribeh">
+          <p>
+            Jsem Dominik a tvořím tuhle digitální zoo.  
+            Nejsou to jen obrázky — jsou to malé příběhy, co si zaslouží místo.  
+            Pokud mi chceš něco napsat:  
+            <strong>ozvi se pomocí formuláře</strong>, nebo skrze moje kontakty níže.
+          </p>
+        </div>
+        <ul class="kontakt-info">
+          <li><strong>E-mail:</strong> <a href="mailto:kana.dominik24@gmail.com">kana.dominik24@gmail.com.</a></li>
+          <li><strong>GitHub:</strong> <a href="https://github.com/tvoje-jmeno" target="_blank">github.com/tvoje-jmeno</a></li>
+          <li><strong>Instagram:</strong> <a href="https://instagram.com/zoo.project" target="_blank">@zoo.project</a></li>
+        </ul>
+      </div>
+    </div>
+
+   <div class="kontakt-formular">
+  <h2>Napiš mi zprávu</h2>
+  <form action="https://formspree.io/f/xkgblrgg" method="POST">
+    <label for="jmeno">Jméno:</label>
+    <input type="text" id="jmeno" name="jmeno" required />
+
+    <label for="email">E-mail:</label>
+    <input type="email" id="email" name="email" required />
+
+    <label for="zprava">Zpráva:</label>
+    <textarea id="zprava" name="zprava" rows="5" required></textarea>
+
+    <!-- Nepovinné skryté pole pro redirect -->
+    <input type="hidden" name="_redirect" value="diky.html" />
+
+    <button type="submit">Odeslat zprávu</button>
+  </form>
+</div>
+
+</main>
+  <footer>
+    <p>&copy; 2025 DominikDev</p>
+  </footer>
+
+</body>
+</html>

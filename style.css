@@ -1,0 +1,404 @@
+/* RESET A ZÁKLADNÍ NASTAVENÍ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background-color: #ffffff;
+  color: #033f55;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+/* HLAVIČKA */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%; /* roztažení přes celou šířku */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+  background: linear-gradient(to right, #033F55, #03893D);
+  box-shadow: 0px 0px 10px #000000;
+  z-index: 1000; /* aby zůstala nad ostatním obsahem */
+}
+
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 960px;
+  padding: 0 40px;
+}
+
+header h1 {
+  font-size: 1.8em;
+  margin: 0;
+  color: #ffffff;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #0CF25C;
+}
+
+/* HLAVNÍ OBSAH */
+main {
+  flex: 1;
+  max-width: 960px;
+  margin: 40px auto;
+  padding: 120px 50px 40px 50px; /* ⬅ zvýšený horní padding kvůli pevné hlavičce */
+}
+
+
+/* ÚVODNÍ SEKCE */
+.intro-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* centrování obrázku i textu */
+  gap: 30px;
+  flex-wrap: nowrap;
+  padding: 40px;
+}
+
+.intro-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.intro-text h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.4em;
+  font-weight: 700;
+  color: #033f55;
+  margin-bottom: 20px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid #53aa9c;
+  display: inline-block;
+}
+/* TLAČÍTKO */
+.tlacitko-zvirata {
+  margin-top: 20px;
+}
+
+.tlacitko-zvirata a {
+  background: linear-gradient(to right, #033F55, #03893D);
+  color: white;
+  padding: 12px 54px;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 8px;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.tlacitko-zvirata a:hover {
+  background-color: #45a049;
+  transform: scale(1.03);
+}
+
+/* PRAVÁ STRANA – OBRÁZEK */
+.intro-image img {
+  width: 260px;
+  height: 460px;
+  border-radius: 12px;
+  display: block;
+  object-fit: cover;
+  box-shadow: 5px 5px 10px #00000063;
+  transition: transform 0.3s ease;
+}
+
+.intro-image img:hover {
+  transform: scale(1.03);
+}
+
+/* PATIČKA */
+footer {
+  font-style: italic;
+  text-align: center;
+  padding: 14px 20px;
+  font-size: 0.85em;
+  color: white;
+  line-height: 1.4;
+  background: linear-gradient(to right, #033F55, #03893D);
+}
+
+/*Stránka Zvířátka*/
+
+.galerie-zvirat {
+  padding: 25px 20px;
+  text-align: center;
+}
+
+.galerie-zvirat h2 {
+  font-size: 2em;
+  color: #033f55;
+  margin-bottom: 30px;
+}
+
+.galerie-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  justify-items: center;
+}
+
+.zvire-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: #033f55;
+  transition: transform 0.3s ease;
+  width: 180px;
+}
+
+.zvire-box img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 25px;
+}
+
+.zvire-box:hover {
+  transform: scale(1.05);
+}
+
+.zvire-box p {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600; /* ztučnění (můžeš dát 700 pokud chceš ještě výraznější) */
+  font-size: 16px;
+  text-transform: uppercase;
+  margin-top: 10px;
+}
+
+
+/*galerie*/
+.obrazek-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 25px;
+}
+
+.obrazek-wrapper img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  transition: transform 0.4s ease, filter 0.4s ease;
+  display: block;
+}
+
+.obrazek-wrapper:hover img {
+  transform: scale(1.05);
+  filter: blur(2px) brightness(0.7);
+}
+
+.popis-zvirete {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  color: rgb(255, 255, 255);
+  font-weight: 600;
+  font-size: 16px;
+  padding: 12px;
+  text-align: center;
+  transition: opacity 0.3s ease;
+}
+
+.obrazek-wrapper:hover .popis-zvirete {
+  opacity: 1;
+}
+
+
+/*SAMOSTATNÉ ZVÍŘATKA NA STRÁNKÁCH DESIGN*/
+
+.profil-zvirete {
+  font-family: 'Poppins', sans-serif;
+  padding: 40px;
+  text-align: center;
+  background-color: #ffffff;
+  color: #033f55;
+}
+
+.karticka img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  object-fit: cover;
+  max-height: 400px;
+}
+
+.info {
+  text-align: left;
+}
+
+.info ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+}
+
+.info li {
+  margin-bottom: 8px;
+}
+
+.prezdivka {
+  font-style: italic;
+  font-size: 18px;
+  margin-top: -10px;
+  margin-bottom: 30px;
+  color: #52796f;
+}
+
+.motto {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #1a4f4a;
+}
+
+.pribeh p {
+  background: #e0f7f1;
+  padding: 12px;
+  border-left: 4px solid #53aa9c;
+  border-radius: 8px;
+  font-size: 15px;
+  font-style: italic;
+}
+
+/* KONTAKT STRÁNKA */
+
+.kontakt-obsah {
+  font-family: 'Poppins', sans-serif;
+  max-width: 700px;
+  margin: 120px auto 60px auto;
+  padding: 40px;
+  background-color: #f1fdfb;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+  text-align: center;
+  color: #033f55;
+}
+
+.kontakt-info {
+ list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.kontakt-info li {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.kontakt-info a {
+  color: #227c9d;
+  text-decoration: none;
+}
+
+.kontakt-info a:hover {
+  text-decoration: underline;
+}
+
+.kontakt-obsah .motto {
+  margin-top: 30px;
+  font-style: italic;
+  color: #03893D;
+}
+
+
+/* FORMULÁŘ */
+
+.kontakt-blok {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-top: 60px;
+}
+
+.kontakt-text {
+  flex: 1;
+  min-width: 300px;
+}
+
+.kontakt-formular {
+  flex: 1;
+  min-width: 300px;
+  background-color: #f1fdfb;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+}
+
+.kontakt-formular h2 {
+  margin-bottom: 20px;
+  color: #033f55;
+  font-size: 20px;
+}
+
+.kontakt-formular label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+.kontakt-formular input,
+.kontakt-formular textarea {
+  width: 100%;
+  padding: 10px 14px;
+  margin-bottom: 16px;
+  border-radius: 8px;
+  border: 1px solid #bcdcd4;
+  background-color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+}
+
+.kontakt-formular button {
+  background: linear-gradient(to right, #033F55, #03893D);
+  color: white;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.kontakt-formular button:hover {
+  transform: scale(1.03);
+  background-color: #227c9d;
+}
+
+
